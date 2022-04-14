@@ -60,8 +60,7 @@ describe('As part of the sql refresh workshop', () => {
 	it('you should be able to change a given Male garment to a Unisex garment', async () => {
 
 		// use db.one with an update sql statement
-		const result = await db.one('update garment set gender = $1 where gender = $2 and description = $3'
-		,['Unisex','Male','Red hooded jacket']);
+		db.one('update garment set gender = $1 where gender = $2 ',['Unisex','Male']);
 		// write your code above this line
 		//db.none - for updates, deletes or inserts
 		const gender_sql = 'select gender from garment where description = $1'
@@ -78,7 +77,11 @@ describe('As part of the sql refresh workshop', () => {
 		//db.one - for queries that returns one things, it will return an object, or a single variable
 		//db.many - for queries that returns many things, in the form of a list.
 		const addGarments = 'insert into garment(description, img, season, gender, price) values ($1,$2,$3,$4,$5)'
-		db.none(addGarments)
+		db.none(addGarments,['Golf t-shirt', 'collared-128x128-455119.png', 'Summer', 'Male', '79.24'])
+		db.none(addGarments, ['Red hooded jacket', 'hoodie-128x128-455122.png', 'Winter', 'Male', '299.99'])
+		db.none(addGarments, ['Red hooded jacket', 'hoodie-128x128-455122.png', 'Winter', 'Female', '299.99'])
+		db.none(addGarments, ['Red hooded jacket', 'hoodie-128x128-455122.png', 'Winter', 'Female', '299.99'])
+		db.none(addGarments, ['Red hooded jacket', 'hoodie-128x128-455122.png', 'Winter', 'Female', '299.99'])
 
 		// write your code above this line
 
@@ -94,7 +97,7 @@ describe('As part of the sql refresh workshop', () => {
 	it('you should be able to group garments by gender and count them', async () => {
 
 		// and below this line for this function will
-		const garmentsGrouped = await db.many('select count(*) gender from garment group by gender order by gender asc')
+		const garmentsGrouped = await db.many('select count(*),gender from garment group by gender order by gender asc' ,)
 		// write your code above this line
 
 		const expectedResult = [
