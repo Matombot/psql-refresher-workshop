@@ -1,2 +1,2 @@
 [![Build Status](https://app.travis-ci.com/Matombot/psql-refresher-workshop.svg?branch=main)](https://app.travis-ci.com/Matombot/psql-refresher-workshop)
-[![Node.js CI](https://github.com/Matombot/psql-refresher-workshop/actions/workflows/node.js.yml/badge.svg)](https://github.com/Matombot/psql-refresher-workshop/actions/workflows/node.js.yml)
+[![Node.js CI](https://github.com/Matombot/psql-refresher-workshop/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/Matombot/psql-refresher-workshop/actions/workflows/node.js.yml)
