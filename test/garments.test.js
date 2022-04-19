@@ -99,18 +99,19 @@ describe('As part of the sql refresh workshop', () => {
 		// and below this line for this function will
 		const garmentsGrouped = await db.many('select count(*), gender from garment group by gender');
 		// write your code above this line
-		const expectedResult = [{
-				count: '15',
-				gender: 'Male'
+		const expectedResult = [
+			{
+				count: '4',
+				gender: 'Unisex'
 			},
+			
 			{
 				count: '16',
 				gender: 'Female'
 			},
-			
 			{
-				count: '4',
-				gender: 'Unisex'
+				count: '15',
+				gender: 'Male'
 			}
 			
 			
